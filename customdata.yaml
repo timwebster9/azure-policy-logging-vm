@@ -1,0 +1,8 @@
+#cloud-config
+users:
+  - default
+  - name: omsagent
+    gecos: OMS Agent
+
+runcmd:
+  - setfacl -R -m u:omsagent:rx /var/log

@@ -26,7 +26,7 @@ resource "azurerm_linux_virtual_machine" "example" {
   size                = "Standard_D2ds_v4"
   disable_password_authentication = false
   admin_username      = "azureuser"
-  admin_password      = "Kifemachine1234"
+  admin_password      = "Passw0rd1234"
 
   network_interface_ids = [
     azurerm_network_interface.example.id,
@@ -43,5 +43,7 @@ resource "azurerm_linux_virtual_machine" "example" {
     sku       = "7.7"
     version   = "latest"
   }
+
+  custom_data = filebase64("customdata.yaml")
 
 }
