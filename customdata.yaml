@@ -1,8 +1,4 @@
 #cloud-config
-users:
-  - default
-  - name: omsagent
-    gecos: OMS Agent
-
 runcmd:
+  - useradd -r -s /bin/false omsagent
   - setfacl -R -m u:omsagent:rx /var/log
